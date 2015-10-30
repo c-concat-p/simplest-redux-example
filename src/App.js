@@ -1,23 +1,15 @@
 import { connect } from 'react-redux'
-import Counter from './components/Counter'
-import { increaseAction } from './actions/Actions'
+import MultipleDevices from './components/MultipleDevices'
 
 // Map Redux state to component props
 function mapStateToProps (state) {
+  console.log(state);
   return {
-    value: state.count
-  }
-}
-
-// Map Redux actions to component props
-function mapDispatchToProps (dispatch) {
-  return {
-    onIncreaseClick: () => dispatch(increaseAction)
+    devices: state.devices
   }
 }
 
 // Connected Component
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter)
+  mapStateToProps
+)(MultipleDevices)
