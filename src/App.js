@@ -1,15 +1,14 @@
-import { connect } from 'react-redux'
-import MultipleDevices from './components/MultipleDevices'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import createStore from './store'
+import View from './components/View'
 
-// Map Redux state to component props
-function mapStateToProps (state) {
-  console.log(state);
-  return {
-    devices: state.devices
-  }
-}
+let store = createStore()
 
-// Connected Component
-export default connect(
-  mapStateToProps
-)(MultipleDevices)
+ReactDOM.render(
+  <Provider store={store}>
+    <View />
+  </Provider>,
+  document.getElementById('root')
+)

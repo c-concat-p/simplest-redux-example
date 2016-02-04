@@ -4,7 +4,7 @@
   "description": "simplest redux + react example",
   "main": "index.js",
   "scripts": {
-    "start": "watchify --extension=js -o dist/bundle.js src/index.js & python -m SimpleHTTPServer"
+    "start": "watchify --extension=js -o dist/bundle.js src/app.js & python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "react-dom": "^0.14.0",
     "react-redux": "^3.1.0",
     "redux": "^3.0.0",
+    "redux-thunk": "^1.0.3",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
