@@ -1,18 +1,18 @@
-import { INCREASE, SET_PRIMARY, FETCH_DEVICES } from '../constants'
+import { FETCH_DEPT } from '../constants'
+import $ from 'jquery'
 
-export const increaseAction = {
-  type: INCREASE
-}
-
-export const setPrimary = function (id) {
-    return {
-        type: SET_PRIMARY,
-        id: id
-    }
-}
-
-export const fetchDevices = function () {
-    return {
-        type: FETCH_DEVICES
+export const fetchDept = function () {
+    return function (dispatch) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://www.bestbuy.ca/api/v2/json/search?categoryId=departments',
+            dataType: 'jsonp',
+            done: dispatch(function (data) {
+                return {
+                    type: FETCH_DEPT,
+                    data: data
+                }
+            })
+        });
     }
 }

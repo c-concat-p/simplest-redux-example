@@ -1,15 +1,13 @@
-import { redux } from 'redux'
+import { applyMiddleware, createStore, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from '../reducers'
 
-console.log(redux);
-
-let createStoreWithMiddleware = redux.applyMiddleware(
+let createStoreWithMiddleware = applyMiddleware(
     thunk
-)(redux.createStore);
+)(createStore);
 
 export default (function configureStore (initialState) {
-    return createStoreWithMiddleware(redux.combineReducers({
+    return createStoreWithMiddleware(combineReducers({
         data: reducer
     }), initialState);
-})();
+}());

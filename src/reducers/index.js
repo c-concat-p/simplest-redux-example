@@ -1,12 +1,19 @@
-import { INCREASE } from '../constants'
+import { FETCH_DEPT } from '../constants'
 
-// Reducer
-export default function counter (state = {count: 0}, action) {
-  let count = state.count
+let initialState = {};
 
+function fetchDept(state, action) {
+    console.log(state);
+
+    // do other stuff
+
+    return Object.assign({}, state);
+}
+
+export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case INCREASE:
-      return {count: count + 1}
+    case FETCH_DEPT:
+      return fetchDept(state, action);
     default:
       return state
   }

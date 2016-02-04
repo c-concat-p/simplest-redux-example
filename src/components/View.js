@@ -1,18 +1,19 @@
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
+import Departments from './Departments'
 
 class View extends React.Component {
-
-}
-
-View.propTypes = {
     render() {
         return (
-            <div>JSON.stringify(this.props, null, '  ')</div>
+            <Departments dispatch={this.props.dispatch} />
         );
     }
 }
+
+/*View.propTypes = {
+
+}*/
 
 // Map Redux state to component props
 function mapStateToProps (state) {
