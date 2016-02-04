@@ -1,13 +1,15 @@
 import { FETCH_DEPT } from '../constants'
 
-let initialState = {};
+let initialState = {
+    departments: []
+};
 
 function fetchDept(state, action) {
-    console.log(state);
+    state = Object.assign({}, state);
 
-    // do other stuff
+    state.departments = action.data.products;
 
-    return Object.assign({}, state);
+    return state;
 }
 
 export default function reducer(state = initialState, action) {

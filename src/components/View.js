@@ -6,7 +6,7 @@ import Departments from './Departments'
 class View extends React.Component {
     render() {
         return (
-            <Departments dispatch={this.props.dispatch} />
+            <Departments data={this.props.data} dispatch={this.props.dispatch} />
         );
     }
 }

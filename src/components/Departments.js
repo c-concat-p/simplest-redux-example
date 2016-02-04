@@ -7,14 +7,16 @@ export default class Departments extends React.Component {
     }
 
     render() {
-        console.log(this.props.data);
+        let data = this.props.data;
 
-        return (
-            <ul>
-                this.props.data.map(function (dept) {
-                    <li>{dept}</li>
-                })
-            </ul>
+        let depts = data.departments.length && data.departments.map((dept)=> {
+            return <li key={dept.sku}>{dept.name}</li>;
+        });
+
+        return depts ? (
+            <ul>{depts}</ul>
+        ) : (
+            <p>loading...</p>
         );
     }
 }
